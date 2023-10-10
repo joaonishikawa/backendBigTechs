@@ -2,10 +2,15 @@ import img1 from "../../images/img1.svg";
 import img2 from "../../images/img2.svg";
 import git from "../../images/github.svg";
 import "./startpage.css";
+import { TypeAnimation } from "react-type-animation";
+import Card from "./Card";
+import { Fade } from 'react-awesome-reveal';
+
 
 function Startpage() {
   return (
     <div>
+      <Fade delay={1e0} cascade damping={1e-1} direction='down'>
       <section>
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 ">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 items-center">
@@ -31,7 +36,9 @@ function Startpage() {
         </div>
         <hr className="mx-auto max-w-screen-xl" />
       </section>
+      </Fade>  
 
+      <Fade delay={1e0} cascade damping={1e-1} direction='left'>
       <section>
         <div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
@@ -55,18 +62,42 @@ function Startpage() {
         </div>
         <hr className="mx-auto max-w-screen-xl" />
       </section>
+      </Fade>
 
+      <Fade delay={1e0} cascade damping={1e-1} direction='up'>
       <section>
         <div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
           <div class="flex justify-center gap-8 lg:grid-cols-2 lg:gap-16">
             <div class="flex lg:order-2 justify-center">
-              <h1 className="text-7xl font-bold text-cyan-950 mb-7 max-sm:text-5xl" >
-                As principais Big Techs
+              <h1 className="text-7xl text-center font-bold text-cyan-950 mb-7 max-sm:text-5xl" >
+                As principais Big Techs <br />
+                  <center><TypeAnimation className='text-7xl text-blue-500 font-bold mt-10 text-transparent bg-gradient-to-r bg-clip-text from-pink-500 to-blue-500'
+                  sequence={[
+                  "Microsoft",
+                  3000,
+                  "Apple",
+                  3000,
+                  "Meta", 
+                  3000,
+                  "Google",
+                  3000,
+                  "Sony",
+                  3000,
+                  "Samsung", 
+                  3000
+                  ]}
+                  speed={1}
+                  deletionSpeed={1}
+                  repeat={Infinity}
+                  /></center>
+
+                  <Card />
               </h1>
             </div>
           </div>
         </div>
       </section>
+      </Fade>
 
       <footer class="bg-cyan-950 rounded-lg shadow m-4 mx-auto max-w-screen-xl max-sm:ml-5 max-sm:mr-5 max-lg:ml-5 ">
         <div class="w-full max-w-screen-xl mx-auto p-10 py-12">
@@ -121,6 +152,7 @@ function Startpage() {
             </ul>
           </div>
         </div>
+
       </footer>
     </div>
   );
